@@ -1,0 +1,98 @@
+/* CSS Design Tokens for Olympic Hub (Dark & Light Modes) */
+:root,
+[data-theme="dark"] {
+  /* Positioning & Layout */
+  --sidebar-expanded-width: 240px;
+  --sidebar-collapsed-width: 80px;
+  --topbar-height: 64px;
+  --bottombar-height: 64px;
+
+  /* Surfaces & Backgrounds */
+  --bg-base: #160C33;
+  --bg-surface: #21124A;
+  --bg-elevated: #2D1963;
+  --bg-card-hover: #291656;
+  --border-surface: #362073;
+  --border-subtle: #2d1b5a;
+
+  /* Typography Colors */
+  --text-primary: #FFFFFF;
+  --text-secondary: #D4CEF0;
+  --text-muted: #958BB8;
+
+  /* Brand Gradient */
+  --brand-primary: #7800D6;
+  --brand-secondary: #2E008F;
+  --brand-gradient: linear-gradient(135deg, #7800D6 0%, #2E008F 100%);
+  --brand-gradient-hover: linear-gradient(135deg, #8816e8 0%, #3a00b0 100%);
+
+  /* Vibrant Accents */
+  --accent-gold: #F9CA20;
+  --accent-gold-bg: rgba(249, 202, 32, 0.15);
+  --accent-coral: #FF4949;
+  --accent-coral-bg: rgba(255, 73, 73, 0.15);
+  --accent-emerald: #10B981;
+  --accent-emerald-bg: rgba(16, 185, 129, 0.15);
+  --accent-cyan: #38BDF8;
+  --accent-cyan-bg: rgba(56, 189, 248, 0.15);
+  --accent-lilac: #C4B5FD;
+  --accent-lilac-bg: rgba(196, 181, 253, 0.15);
+  --accent-peach: #FDBA74;
+  --accent-peach-bg: rgba(253, 186, 116, 0.15);
+
+  /* Elevation Shadows */
+  --shadow-card: 0 4px 20px -2px rgba(0, 0, 0, 0.35);
+  --shadow-elevated: 0 10px 30px -5px rgba(0, 0, 0, 0.5);
+  --shadow-glow: 0 0 25px rgba(120, 0, 214, 0.25);
+}
+
+[data-theme="light"] {
+  /* Surfaces & Backgrounds */
+  --bg-base: #F4F1FA;
+  --bg-surface: #FFFFFF;
+  --bg-elevated: #EDE8F8;
+  --bg-card-hover: #F0EBFA;
+  --border-surface: #E4DCF5;
+  --border-subtle: #D8CEF0;
+
+  /* Typography Colors */
+  --text-primary: #1A103C;
+  --text-secondary: #5B507A;
+  --text-muted: #8277A2;
+
+  /* Brand Gradient (Consistente no Light) */
+  --brand-primary: #7800D6;
+  --brand-secondary: #2E008F;
+  --brand-gradient: linear-gradient(135deg, #7800D6 0%, #2E008F 100%);
+  --brand-gradient-hover: linear-gradient(135deg, #8816e8 0%, #3a00b0 100%);
+
+  /* Vibrant Accents */
+  --accent-gold: #9A6700;
+  --accent-gold-bg: rgba(249, 202, 32, 0.22);
+  --accent-coral: #E53935;
+  --accent-coral-bg: rgba(255, 73, 73, 0.15);
+  --accent-emerald: #059669;
+  --accent-emerald-bg: rgba(16, 185, 129, 0.15);
+  --accent-cyan: #0284C7;
+  --accent-cyan-bg: rgba(56, 189, 248, 0.15);
+  --accent-lilac: #7C3AED;
+  --accent-lilac-bg: rgba(124, 58, 237, 0.12);
+  --accent-peach: #D97706;
+  --accent-peach-bg: rgba(253, 186, 116, 0.2);
+
+  /* Elevation Shadows */
+  --shadow-card: 0 4px 16px -2px rgba(91, 80, 122, 0.08);
+  --shadow-elevated: 0 10px 25px -4px rgba(91, 80, 122, 0.15);
+  --shadow-glow: 0 0 20px rgba(120, 0, 214, 0.12);
+}
+
+/* Animations */
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  20%, 60% { transform: translateX(-6px); }
+  40%, 80% { transform: translateX(6px); }
+}
+
+.animate-shake {
+  animation: shake 0.4s ease-in-out;
+}
