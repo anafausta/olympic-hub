@@ -50,16 +50,16 @@ Guia de referência rápida para desenvolvedores sobre a arquitetura, arquivos, 
 
 ### 3.2. Contextos (`src/context/`) e Hooks (`src/hooks/`)
 
-| Arquivo | Responsabilidade e Comunicação |
+| Arquivo | Responsabilidade e comunicação |
 |---|---|
-| `ThemeContext.jsx` / `useTheme.js` | Controla `theme` (`'dark' \| 'light'`), aplica `data-theme` no `<html>` e persiste via `storageService`. Consumido por `Sidebar`, `MobileDrawer`, `PreferencesSection`. |
-| `StudentContext.jsx` | Mantém `student`, `activeOverlayTrilhaId` e ações (`addXP`, `recordSimulado`, `toggleSavedArticle`, `toggleSavedQuestion`, `updateAvatar`, `updateEmail`, `toggleEmailNotifications`, `deleteAccount`). Sincroniza `posicaoRanking` com `salaService.getStudentRankingPosition`. |
-| `NotificationContext.jsx` / `useNotification.js` | Mantém `notifications`, `unreadCount`, `drawerOpen` e `showToast`. Comunica com `notificacoesService`, `Topbar`, `NotificationDrawer` e `Toast`. |
-| `NavigationContext.jsx` | Gerencia `breadcrumbs`, `sidebarCollapsed`, `mobileMenuOpen`, `logoutModalOpen`. Consumido pelo layout e por todas as Pages. |
-| `useSimuladoTimer.js` | Cronômetro regressivo por segundo (`remainingSeconds`, `elapsedSeconds`, `isWarning` ≤ 5 min) com disparo de `onTimeUp`. Usado em `SimuladoPage`. |
-| `useTrilhaFilter.js` | Filtra trilhas pelo `studentLevel`, busca por título, tags múltiplas e ordena via `sortTrilhas`. Usado em `TrilhasPage`. |
-| `useArtigoSearch.js` | Gerencia busca por título disparada no `Enter`, seleção de tags e delega filtragem/ordenação A-Z a `filterArtigos`. Usado em `ArtigosPage`. |
-| `useInactivityTimer.js` | Monitora eventos de interação e aciona `onTimeout` após 10 min de inatividade no Web. Usado em `App.jsx`. |
+| `ThemeContext.jsx` / `useTheme.js` | Controlam o tema da aplicação (escuro ou claro), atualizam o atributo `data-theme` no HTML e salvam a preferência do estudante por meio do `storageService`. Utilizados pela `Sidebar`, `MobileDrawer` e `PreferencesSection`. |
+| `StudentContext.jsx` | Armazena os dados e o progresso do estudante, além de controlar ações como adicionar XP, registrar simulados, salvar artigos e questões, atualizar avatar e e-mail, gerenciar notificações por e-mail e excluir a conta. Também atualiza a posição do estudante no ranking por meio do `salaService`. |
+| `NotificationContext.jsx` / `useNotification.js` | Gerenciam as notificações da aplicação, incluindo a lista de notificações, a quantidade de não lidas, a abertura do painel e as mensagens temporárias (Toast). Integram-se ao `notificacoesService`, `Topbar`, `NotificationDrawer` e `Toast`. |
+| `NavigationContext.jsx` | Controla elementos da navegação, como o caminho da página atual (breadcrumbs), a exibição da barra lateral, a abertura do menu mobile e a janela de confirmação de logout. Utilizado pelo layout e pelas páginas da aplicação. |
+| `useSimuladoTimer.js` | Controla o cronômetro dos simulados, atualizando o tempo restante e o tempo decorrido a cada segundo. Ativa um alerta quando faltam 5 minutos ou menos e executa `onTimeUp` quando o tempo acaba. Utilizado em `SimuladoPage`. |
+| `useTrilhaFilter.js` | Gerencia os filtros da página de trilhas, permitindo filtrar pelo nível do estudante, pesquisar por título, selecionar múltiplas tags e ordenar os resultados. Utilizado em `TrilhasPage`. |
+| `useArtigoSearch.js` | Gerencia a busca e os filtros dos artigos, permitindo pesquisar pelo título ao pressionar Enter, selecionar tags e ordenar os resultados em ordem alfabética (A-Z). Utilizado em `ArtigosPage`. |
+| `useInactivityTimer.js` | Monitora a interação do estudante com a aplicação e executa `onTimeout` após 10 minutos de inatividade. Utilizado em `App.jsx`. |
 
 ### 3.3. Serviços (`src/services/`) e Utilitários (`src/utils/`)
 

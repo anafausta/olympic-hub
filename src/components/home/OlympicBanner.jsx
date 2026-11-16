@@ -16,7 +16,7 @@ export const OlympicBanner = () => {
                 <Sparkles className="w-3.5 h-3.5" /> Olimpíada Oficial
               </span>
               <span className="text-xs px-2 py-0.5 rounded-full bg-[var(--bg-elevated)] text-[var(--text-secondary)] border border-[var(--border-surface)]">
-                OBEF 2026
+                OLITEF 2027
               </span>
             </div>
             <h2 className="text-lg md:text-xl font-heading font-black text-[var(--text-primary)]">
@@ -25,19 +25,19 @@ export const OlympicBanner = () => {
             <p className="text-xs md:text-sm text-[var(--text-secondary)] flex items-center gap-2">
               <Calendar className="w-4 h-4 text-[#F9CA20]" />
               Data oficial da prova da 1ª Fase:{' '}
-              <strong className="text-[var(--text-primary)]">15 de Outubro de 2026</strong>
+              <strong className="text-[var(--text-primary)]">08 de Setembro de 2027</strong>
             </p>
           </div>
         </div>
 
         <a
-          href="https://www.obef.com.br"
+          href="https://www.olitef.com.br/"
           target="_blank"
           rel="noopener noreferrer"
           className="w-full md:w-auto"
         >
           <Button variant="outline" size="sm" fullWidth className="gap-2">
-            <span>Portal Oficial da OBEF</span>
+            <span>Portal Oficial da OLITEF</span>
             <ExternalLink className="w-4 h-4" />
           </Button>
         </a>
