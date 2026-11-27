@@ -4,7 +4,7 @@ import { GeneralTrailCard } from '../components/home/GeneralTrailCard';
 import { PerformanceCard } from '../components/home/PerformanceCard';
 import { ContinueSessions } from '../components/home/ContinueSessions';
 import { HomeTabs } from '../components/home/HomeTabs';
-import { Sparkles } from 'lucide-react';
+import { Sparkles } from '../components/ui/SolarIcon';
 
 export const HomeView = ({ student, trilhaGeral, loading }) => {
   if (loading) {
@@ -24,7 +24,7 @@ export const HomeView = ({ student, trilhaGeral, loading }) => {
         <div>
           <div className="flex items-center gap-2 text-xs font-bold text-[var(--accent-gold)] uppercase tracking-wider mb-1">
             <Sparkles className="w-3.5 h-3.5" />
-            <span>Área do Aluno — Experiência Logada</span>
+            <span>Área do Aluno</span>
           </div>
           <h1 className="text-2xl md:text-3xl lg:text-4xl font-heading font-black tracking-tight text-[var(--text-primary)]">
             Olá, {student?.nome || 'Estudante'}! 👋

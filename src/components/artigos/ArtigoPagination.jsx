@@ -1,4 +1,4 @@
-import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { ChevronLeft, ChevronRight } from '../ui/SolarIcon';
 import { Button } from '../ui/Button';
 
 export const ArtigoPagination = ({

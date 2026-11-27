@@ -14,7 +14,7 @@ import {
   History,
   BookOpen,
   ArrowRight
-} from 'lucide-react';
+} from '../ui/SolarIcon';
 import { formatDate } from '../../utils/formatters';
 
 export const HomeTabs = () => {

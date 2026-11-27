@@ -9,7 +9,7 @@ import {
   Calendar,
   ArrowRight,
   FolderOpen
-} from 'lucide-react';
+} from '../ui/SolarIcon';
 import { formatDate } from '../../utils/formatters';
 
 export const LessonsList = ({ aulas = [], onUpdateProgress }) => {
@@ -28,7 +28,7 @@ export const LessonsList = ({ aulas = [], onUpdateProgress }) => {
             Aulas da Turma
           </h3>
           <p className="text-xs text-[var(--text-secondary)]">
-            Ordenadas da mais recente para a mais antiga • Sem prazo de entrega
+            Ordenadas da mais recente para a mais antiga
           </p>
         </div>
         <span className="text-xs text-[var(--text-muted)]">
@@ -40,7 +40,7 @@ export const LessonsList = ({ aulas = [], onUpdateProgress }) => {
         <BentoCard variant="surface" className="text-center py-12">
           <div className="flex flex-col items-center justify-center space-y-2 text-[var(--text-muted)]">
             <FolderOpen className="w-10 h-10 opacity-30" />
-            <p className="text-sm">Nenhuma aula enviada pelo professor até o momento.</p>
+            <p className="text-sm">Nenhuma aula enviada até o momento.</p>
           </div>
         </BentoCard>
       ) : (

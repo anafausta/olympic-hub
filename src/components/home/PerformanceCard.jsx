@@ -7,7 +7,7 @@ import {
   CheckCircle2,
   FileCheck2,
   Target
-} from 'lucide-react';
+} from '../ui/SolarIcon';
 
 export const PerformanceCard = ({ student }) => {
   const taxaAcerto =
@@ -43,7 +43,7 @@ export const PerformanceCard = ({ student }) => {
     {
       label: 'Simulados Realizados',
       value: student?.simuladosRealizados || 6,
-      subtext: 'Testes de múltipla escolha finalizados',
+      subtext: 'Testes finalizados',
       color: 'text-[var(--accent-cyan)]',
       bg: 'bg-[var(--accent-cyan-bg)]',
       icon: FileCheck2
@@ -59,7 +59,7 @@ export const PerformanceCard = ({ student }) => {
     {
       label: 'Exercícios Acertados',
       value: student?.exerciciosAcertados || 38,
-      subtext: 'Resoluções corretas confirmadas',
+      subtext: 'Resoluções corretas',
       color: 'text-[var(--accent-emerald)]',
       bg: 'bg-[var(--accent-emerald-bg)]',
       icon: CheckCircle2
@@ -75,12 +75,9 @@ export const PerformanceCard = ({ student }) => {
               <TrendingUp className="w-4 h-4" />
             </div>
             <h3 className="font-heading font-bold text-lg text-[var(--text-primary)]">
-              Meu Desempenho Geral
+              Meu Desempenho
             </h3>
           </div>
-          <span className="text-xs text-[var(--text-muted)]">
-            Atualizado em tempo real
-          </span>
         </div>
 
         {/* 6 Grid Metrics */}

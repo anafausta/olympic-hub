@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { BentoCard } from '../ui/BentoCard';
 import { Button } from '../ui/Button';
 import { Badge } from '../ui/Badge';
-import { Clock, Sparkles, ArrowLeft, CheckCircle2, RotateCcw } from 'lucide-react';
+import { Clock, Sparkles, ArrowLeft, CheckCircle2, RotateCcw } from '../ui/SolarIcon';
 import { formatSecondsToMinutes } from '../../utils/formatters';
 
 // RF84: Caça-Palavras com limite de 5 minutos, sem dicas, horizontal/vertical/diagonal (cima->baixo e baixo->cima)
@@ -139,7 +139,7 @@ export const CacaPalavras = ({ onWin, onBack }) => {
       <BentoCard variant="surface" className="p-6 md:p-8 space-y-6">
         <div>
           <h3 className="text-xl font-heading font-black text-[var(--text-primary)]">
-            Caça-Palavras Olímpico
+            Caça-Palavras
           </h3>
           <p className="text-xs text-[var(--text-secondary)] mt-1">
             Clique nas letras em sequência (horizontal, vertical ou diagonal) para formar cada palavra. Sem dicas!

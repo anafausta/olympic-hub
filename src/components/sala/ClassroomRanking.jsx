@@ -1,7 +1,7 @@
 import { BentoCard } from '../ui/BentoCard';
 import { formatXP } from '../../utils/formatters';
 import { computeRankingWithStudent } from '../../services/salaService';
-import { Trophy, Sparkles } from 'lucide-react';
+import { Trophy, Sparkles } from '../ui/SolarIcon';
 
 export const ClassroomRanking = ({ ranking = [], currentStudent }) => {
   // Unify XP & ranking position with current student's live XP

@@ -8,7 +8,7 @@ import {
   CheckCircle2,
   Lock,
   Play
-} from 'lucide-react';
+} from '../ui/SolarIcon';
 
 export const TrailActivityItem = ({ atividade, index, onSelectActivity }) => {
   const [isShaking, setIsShaking] = useState(false);

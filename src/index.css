@@ -1,5 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&family=Nunito+Sans:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
 @import "tailwindcss";
 @import "./styles/tokens.css";
+
 
 /* Base Resets & Global Typography */
 * {
@@ -12,13 +15,19 @@ html, body {
   min-height: 100vh;
   background-color: var(--bg-base);
   color: var(--text-primary);
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-family: 'Quicksand', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   overflow-x: hidden;
   transition: background-color 0.25s ease, color 0.25s ease;
 }
 
+body {
+  background-image: var(--bg-ambient);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
 h1, h2, h3, h4, h5, h6, .font-heading {
-  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-family: 'Quicksand', -apple-system, BlinkMacSystemFont, sans-serif;
   letter-spacing: -0.02em;
 }
 
@@ -57,4 +66,12 @@ h1, h2, h3, h4, h5, h6, .font-heading {
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
+}
+
+[style*="var(--bg-surface)"],
+[style*="var(--bg-elevated)"],
+.glass-surface {
+  backdrop-filter: blur(16px) saturate(140%);
+  -webkit-backdrop-filter: blur(16px) saturate(140%);
+  box-shadow: var(--shadow-card);
 }

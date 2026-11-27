@@ -8,7 +8,7 @@ import {
   MessageSquare,
   Link as LinkIcon,
   Send
-} from 'lucide-react';
+} from '../ui/SolarIcon';
 import { formatDate } from '../../utils/formatters';
 import {
   FORUM_COMMENT_MAX_CHARS,

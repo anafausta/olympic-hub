@@ -1,7 +1,7 @@
 import { Modal } from '../ui/Modal';
 import { Button } from '../ui/Button';
 import { useNavigation } from '../../context/NavigationContext';
-import { LogOut } from 'lucide-react';
+import { LogOut } from '../ui/SolarIcon';
 
 export const LogoutModal = () => {
   const { logoutModalOpen, setLogoutModalOpen } = useNavigation();

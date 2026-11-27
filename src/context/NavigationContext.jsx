@@ -7,9 +7,21 @@ export const NavigationProvider = ({ children }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
   const [logoutModalOpen, setLogoutModalOpen] = useState(false);
+  const [isSimuladoRunning, setIsSimuladoRunning] = useState(false);
+  const [simuladoExitRequested, setSimuladoExitRequested] = useState(false);
 
   const toggleSidebar = () => {
     setSidebarCollapsed((prev) => !prev);
+  };
+
+  const handleProtectedNavigation = (e, targetPath) => {
+    if (isSimuladoRunning && targetPath !== '/simulado') {
+      if (e) e.preventDefault();
+      setSimuladoExitRequested(true);
+      setMobileMenuOpen(false);
+      return false;
+    }
+    return true;
   };
 
   return (
@@ -23,7 +35,12 @@ export const NavigationProvider = ({ children }) => {
         setSidebarCollapsed,
         toggleSidebar,
         logoutModalOpen,
-        setLogoutModalOpen
+        setLogoutModalOpen,
+        isSimuladoRunning,
+        setIsSimuladoRunning,
+        simuladoExitRequested,
+        setSimuladoExitRequested,
+        handleProtectedNavigation
       }}
     >
       {children}

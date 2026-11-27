@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Modal } from '../ui/Modal';
 import { Button } from '../ui/Button';
-import { Mail, CheckCircle2 } from 'lucide-react';
+import { Mail, CheckCircle2 } from '../ui/SolarIcon';
 
 export const PasswordResetModal = ({
   isOpen,

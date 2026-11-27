@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { BentoCard } from '../ui/BentoCard';
 import { Button } from '../ui/Button';
 import { Badge } from '../ui/Badge';
-import { Clock, Heart, Sparkles, CheckCircle2, RotateCcw, ArrowLeft } from 'lucide-react';
+import { Clock, Heart, Sparkles, CheckCircle2, RotateCcw, ArrowLeft } from '../ui/SolarIcon';
 import { formatSecondsToMinutes } from '../../utils/formatters';
 
 // RF157: Matriz NxN (3x3), números nas células, números-alvo nas bordas verticais e horizontais

@@ -9,7 +9,7 @@ import {
   ShieldCheck,
   TrendingUp,
   Layers
-} from 'lucide-react';
+} from '../ui/SolarIcon';
 
 export const TrailCard = ({ trilha, onOpenOverlay }) => {
   const progress = trilha.percentualConclusao ?? 0;

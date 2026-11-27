@@ -1,7 +1,7 @@
 import { Modal } from '../ui/Modal';
 import { Button } from '../ui/Button';
 import { AVATAR_PRESETS } from '../../services/alunoService';
-import { Check } from 'lucide-react';
+import { Check } from '../ui/SolarIcon';
 
 export const AvatarPickerModal = ({
   isOpen,
@@ -18,7 +18,7 @@ export const AvatarPickerModal = ({
     >
       <div className="space-y-4">
         <p className="text-xs text-[var(--text-secondary)]">
-          Selecione um dos 10 avatares oficiais da plataforma. O upload de fotos é bloqueado para proteção e privacidade escolar.
+          Selecione um dos 10 avatares oficiais da plataforma.
         </p>
 
         {/* 10 Pre-defined Avatars (RF130) */}

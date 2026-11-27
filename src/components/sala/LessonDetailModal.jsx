@@ -11,7 +11,7 @@ import {
   CheckCircle2,
   ArrowRight,
   ExternalLink
-} from 'lucide-react';
+} from '../ui/SolarIcon';
 
 export const LessonDetailModal = ({ aula, isOpen, onClose, onUpdateProgress }) => {
   const navigate = useNavigate();
@@ -35,6 +35,14 @@ export const LessonDetailModal = ({ aula, isOpen, onClose, onUpdateProgress }) =
 
   const handleExecuteEtapa = (etapa) => {
     onClose();
+
+    if (etapa.tipo === 'Simulado') {
+      navigate(etapa.link || '/simulado', {
+        state: { fromAulaId: aula.id, etapaId: etapa.id }
+      });
+      return;
+    }
+
     if (onUpdateProgress) {
       onUpdateProgress(aula.id, etapa.id);
     }

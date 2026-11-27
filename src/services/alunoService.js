@@ -17,15 +17,15 @@ export const AVATAR_PRESETS = [
 
 const INITIAL_ALUNO = {
   id: 'aluno-001',
-  nome: 'Lucas Silva',
-  email: 'lucas.silva@escolaolimpica.edu.br',
+  nome: 'Ana',
+  email: 'ana.fausta@gmail.com',
   avatarId: 3,
   anoEscolar: '8º Ano - Ensino Fundamental II',
   escola: 'Colégio Estadual Rui Barbosa',
   salaId: 'sala-802',
-  salaNome: 'Turma 802 - Finanças Olímpicas',
+  salaNome: 'Turma 802',
   nivel: 2, // 1: 6º/7º, 2: 8º/9º, 3: Ensino Médio (RF34, RF41)
-  professores: ['Profª. Mariana Albuquerque', 'Prof. Ricardo Mendes'],
+  professores: ['Profª. Mariana Albuquerque'],
   xp: 380,
   posicaoRanking: 4,
   simuladosRealizados: 6,

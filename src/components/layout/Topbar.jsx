@@ -3,11 +3,12 @@ import { useNavigation } from '../../context/NavigationContext';
 import { useStudent } from '../../context/StudentContext';
 import { useNotification } from '../../context/NotificationContext';
 import { Avatar } from '../ui/Avatar';
-import { Bell, Menu, ChevronRight, Sparkles, Award } from 'lucide-react';
+import { Bell, Menu, ChevronRight, Sparkles, Award } from '../ui/SolarIcon';
 import { formatXP } from '../../utils/formatters';
+import logoRetangular from '../../assets/logo - retangular.png';
 
 export const Topbar = () => {
-  const { breadcrumbs, setMobileMenuOpen, sidebarCollapsed } = useNavigation();
+  const { breadcrumbs, setMobileMenuOpen, sidebarCollapsed, toggleSidebar, handleProtectedNavigation } = useNavigation();
   const { student } = useStudent();
   const { unreadCount, setDrawerOpen } = useNotification();
 
@@ -15,11 +16,23 @@ export const Topbar = () => {
     <>
       <header
         className={`h-16 fixed top-0 right-0 z-20 bg-[var(--bg-surface)]/95 backdrop-blur-md border-b border-[var(--border-surface)] flex items-center justify-between px-4 md:px-8 transition-all duration-300 ${
-          sidebarCollapsed ? 'md:left-[80px]' : 'md:left-[240px]'
+          sidebarCollapsed ? 'md:left-0' : 'md:left-[240px]'
         } left-0`}
       >
-        {/* Left Section: Mobile Menu Trigger + Breadcrumbs */}
+        {/* Left Section: Menu Trigger + Breadcrumbs */}
         <div className="flex items-center gap-3">
+          {/* Desktop Hamburger Button when sidebar is completely closed */}
+          {sidebarCollapsed && (
+            <button
+              onClick={toggleSidebar}
+              className="hidden md:flex p-2 rounded-xl text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:bg-[var(--bg-elevated)] transition-colors cursor-pointer"
+              aria-label="Abrir menu lateral"
+              title="Abrir menu"
+            >
+              <Menu className="w-5 h-5" />
+            </button>
+          )}
+
           {/* Mobile Hamburger Button */}
           <button
             onClick={() => setMobileMenuOpen(true)}
@@ -45,6 +58,7 @@ export const Topbar = () => {
                   ) : (
                     <Link
                       to={crumb.path}
+                      onClick={(e) => handleProtectedNavigation(e, crumb.path)}
                       className="text-[var(--text-secondary)] hover:text-[var(--brand-primary)] transition-colors"
                     >
                       {crumb.label}
@@ -55,10 +69,18 @@ export const Topbar = () => {
             })}
           </nav>
 
-          {/* Mobile Brand Title in Header */}
-          <span className="md:hidden font-heading font-bold text-base text-[var(--text-primary)]">
-            Olympic<span className="text-[#F9CA20]">Hub</span>
-          </span>
+          {/* Mobile Brand Logo in Header */}
+          <Link
+            to="/"
+            onClick={(e) => handleProtectedNavigation(e, '/')}
+            className="md:hidden flex items-center"
+          >
+            <img
+              src={logoRetangular}
+              alt="OlympicHub"
+              className="w-auto h-auto max-h-10 max-w-[160px] object-contain"
+            />
+          </Link>
         </div>
 
         {/* Right Section: Level Badge + XP Pill + Bell + Avatar */}
@@ -72,6 +94,7 @@ export const Topbar = () => {
           {/* Gold XP Pill (RF29, RF46) */}
           <Link
             to="/sala"
+            onClick={(e) => handleProtectedNavigation(e, '/sala')}
             className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-[var(--accent-gold-bg)] border border-[var(--accent-gold)]/40 text-xs md:text-sm font-bold text-[var(--accent-gold)] hover:brightness-110 transition-all select-none shadow-sm cursor-pointer"
             title="Pontuação Geral Acumulada"
           >
@@ -95,7 +118,12 @@ export const Topbar = () => {
           </button>
 
           {/* Student Avatar (RF130) */}
-          <Link to="/perfil" className="flex items-center gap-2.5 group cursor-pointer" title="Ver perfil">
+          <Link
+            to="/perfil"
+            onClick={(e) => handleProtectedNavigation(e, '/perfil')}
+            className="flex items-center gap-2.5 group cursor-pointer"
+            title="Ver perfil"
+          >
             <Avatar avatarId={student?.avatarId || 3} size="sm" className="ring-2 ring-transparent group-hover:ring-[#7800D6] transition-all" />
             <div className="hidden xl:flex flex-col text-left">
               <span className="text-xs font-bold text-[var(--text-primary)] leading-tight group-hover:text-[#7800D6] transition-colors">
@@ -121,7 +149,11 @@ export const Topbar = () => {
                   {crumb.label}
                 </span>
               ) : (
-                <Link to={crumb.path} className="text-[var(--text-secondary)]">
+                <Link
+                  to={crumb.path}
+                  onClick={(e) => handleProtectedNavigation(e, crumb.path)}
+                  className="text-[var(--text-secondary)]"
+                >
                   {crumb.label}
                 </Link>
               )}

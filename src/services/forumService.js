@@ -12,7 +12,7 @@ const INITIAL_POSTS = [
     dataCriacao: '2026-11-15T14:20:00Z',
     editado: false,
     autor: {
-      nome: 'Lucas Silva',
+      nome: 'Ana',
       id: 'aluno-001',
       isCurrentUser: true,
       isAluno: true,
@@ -33,7 +33,7 @@ const INITIAL_POSTS = [
           isCurrentUser: false,
           isContaExcluida: false
         },
-        texto: 'Olá Lucas! Para a Olimpíada, a convenção padrão adotada é sempre a exponencial: M = C * (1 + i)^t, onde t pode ser 2.5 diretamente. A convenção linear é aplicada apenas no mercado financeiro interbancário para dias úteis (overnight).',
+        texto: 'Olá Ana! Para a Olimpíada, a convenção padrão adotada é sempre a exponencial: M = C * (1 + i)^t, onde t pode ser 2.5 diretamente. A convenção linear é aplicada apenas no mercado financeiro interbancário para dias úteis (overnight).',
         dataCriacao: '2026-11-15T15:05:00Z',
         editado: false,
         isFixado: true, // RF143: Pinned answer
@@ -41,7 +41,7 @@ const INITIAL_POSTS = [
           {
             id: 'r-101',
             autor: {
-              nome: 'Lucas Silva',
+              nome: 'Ana',
               id: 'aluno-001',
               isCurrentUser: true,
               isAluno: true,

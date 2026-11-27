@@ -6,7 +6,7 @@ import {
   Edit2,
   Trash2,
   Link as LinkIcon
-} from 'lucide-react';
+} from '../ui/SolarIcon';
 import { formatRelativeTime } from '../../utils/formatters';
 
 export const ForumPostCard = ({

@@ -7,7 +7,7 @@ import {
   Sparkles,
   Check,
   AlertCircle
-} from 'lucide-react';
+} from '../ui/SolarIcon';
 
 const QUANTITY_OPTIONS = [1, 5, 10, 15, 20]; // RF50: Restringindo-se a 1, 5, 10, 15, 20 questões
 
@@ -56,29 +56,22 @@ export const SimuladoConfig = ({
           </div>
           <div>
             <h2 className="text-xl md:text-2xl font-heading font-black text-[var(--text-primary)]">
-              Configurar Simulado Avulso
+              Configurar Simulado
             </h2>
             <p className="text-xs text-[var(--text-secondary)]">
-              Personalize os temas e a quantidade para praticar no seu próprio ritmo.
+              Personalize os temas e a quantidade de questões.
             </p>
           </div>
         </div>
 
-        {/* RN02 Notice: Dificuldade Condicionada */}
-        <div className="p-3 rounded-xl bg-[var(--bg-elevated)] border border-[var(--border-surface)] flex items-center gap-2.5 text-xs text-[var(--text-secondary)]">
-          <AlertCircle className="w-4 h-4 text-[var(--accent-cyan)] flex-shrink-0" />
-          <span>
-            <strong>Dificuldade Condicionada:</strong> As questões são calibradas automaticamente para o{' '}
-            <strong className="text-[var(--text-primary)]">Nível {studentLevel}</strong> da sua turma.
-          </span>
-        </div>
+
       </div>
 
       {/* 1. Assuntos (RF49) */}
       <div className="space-y-3">
         <div className="flex items-center justify-between">
           <label className="text-xs font-bold uppercase tracking-wider text-[var(--text-muted)]">
-            1. Assuntos da Prova (Selecione um, vários ou todos)
+            1. Assuntos da Prova
           </label>
           <button
             type="button"
@@ -154,11 +147,8 @@ export const SimuladoConfig = ({
           >
             <div className="flex items-center gap-2 mb-1">
               <Sparkles className="w-4 h-4 text-[#F9CA20]" />
-              <span className="font-bold text-sm text-[var(--text-primary)]">Sem tempo (Treino Livre)</span>
+              <span className="font-bold text-sm text-[var(--text-primary)]">Com cronômetro</span>
             </div>
-            <p className="text-xs text-[var(--text-secondary)]">
-              Responda com calma, sem pressão de relógio.
-            </p>
           </button>
 
           <button
@@ -173,12 +163,10 @@ export const SimuladoConfig = ({
             <div className="flex items-center gap-2 mb-1">
               <Clock className="w-4 h-4 text-[#FF4949]" />
               <span className="font-bold text-sm text-[var(--text-primary)]">
-                Com tempo ({calculatedMinutes} min total)
+                Sem cronômetro
               </span>
             </div>
-            <p className="text-xs text-[var(--text-secondary)]">
-              5 minutos pré-calculados para cada pergunta.
-            </p>
+
           </button>
         </div>
       </div>
@@ -191,7 +179,7 @@ export const SimuladoConfig = ({
           onClick={handleStart}
           className="w-full sm:w-auto font-black shadow-lg"
         >
-          Iniciar Simulado Agora
+          Iniciar Simulado
         </Button>
       </div>
     </BentoCard>

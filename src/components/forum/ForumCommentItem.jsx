@@ -6,7 +6,7 @@ import {
   CornerDownRight,
   Send,
   GraduationCap
-} from 'lucide-react';
+} from '../ui/SolarIcon';
 import { formatRelativeTime } from '../../utils/formatters';
 import {
   FORUM_COMMENT_MAX_CHARS,

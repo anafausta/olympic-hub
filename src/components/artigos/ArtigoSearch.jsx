@@ -1,4 +1,4 @@
-import { Search, CornerDownLeft, X } from 'lucide-react';
+import { Search, CornerDownLeft, X } from '../ui/SolarIcon';
 
 export const ArtigoSearch = ({
   searchInput,

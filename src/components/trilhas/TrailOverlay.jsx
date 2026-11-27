@@ -4,7 +4,7 @@ import { TrailActivityItem } from './TrailActivityItem';
 import { ProgressBar } from '../ui/ProgressBar';
 import { Button } from '../ui/Button';
 import { Badge } from '../ui/Badge';
-import { X, Play, Compass, CheckCircle2 } from 'lucide-react';
+import { X, Play, Compass, CheckCircle2, Video, ExternalLink } from '../ui/SolarIcon';
 
 export const TrailOverlay = ({ trilha, isOpen, onClose }) => {
   const overlayRef = useRef(null);
@@ -149,6 +149,33 @@ export const TrailOverlay = ({ trilha, isOpen, onClose }) => {
 
         {/* Sequential Activities List (RF11, RF12, RF13, RF14) */}
         <div className="p-5 md:p-6 overflow-y-auto space-y-3 flex-1">
+          {trilha.videoUrl && (
+            <a
+              href={trilha.videoUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-3.5 rounded-2xl bg-[var(--accent-cyan-bg)]/50 border border-[var(--accent-cyan)]/30 hover:border-[var(--accent-cyan)] flex items-center justify-between gap-3 transition-all group"
+            >
+              <div className="flex items-center gap-3 min-w-0">
+                <div className="w-10 h-10 rounded-xl bg-[var(--accent-cyan)]/20 text-[var(--accent-cyan)] flex items-center justify-center flex-shrink-0">
+                  <Video className="w-5 h-5" />
+                </div>
+                <div className="min-w-0">
+                  <span className="text-[10px] font-bold uppercase tracking-wider text-[var(--accent-cyan)] block">
+                    Vídeo de Apoio da Trilha
+                  </span>
+                  <p className="text-xs md:text-sm font-semibold text-[var(--text-primary)] truncate">
+                    {trilha.videoTitulo || 'Assistir aula em vídeo relacionada no YouTube'}
+                  </p>
+                </div>
+              </div>
+              <span className="text-xs font-bold text-[var(--accent-cyan)] flex items-center gap-1 flex-shrink-0 group-hover:translate-x-0.5 transition-transform">
+                <span>Assistir</span>
+                <ExternalLink className="w-3.5 h-3.5" />
+              </span>
+            </a>
+          )}
+
           <div className="flex items-center justify-between mb-2">
             <h4 className="text-xs font-bold uppercase tracking-wider text-[var(--text-muted)]">
               Etapas da Trilha (Fácil → Difícil)

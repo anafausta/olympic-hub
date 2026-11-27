@@ -14,12 +14,12 @@ import {
   X,
   Sun,
   Moon,
-  LogOut,
-  Trophy
-} from 'lucide-react';
+  LogOut
+} from '../ui/SolarIcon';
+import logoRetangular from '../../assets/logo - retangular.png';
 
 export const MobileDrawer = () => {
-  const { mobileMenuOpen, setMobileMenuOpen, setLogoutModalOpen } = useNavigation();
+  const { mobileMenuOpen, setMobileMenuOpen, setLogoutModalOpen, handleProtectedNavigation } = useNavigation();
   const { toggleTheme, isDark } = useTheme();
 
   useEffect(() => {
@@ -56,14 +56,11 @@ export const MobileDrawer = () => {
         <div>
           {/* Header */}
           <div className="flex items-center justify-between pb-4 border-b border-[var(--border-surface)]">
-            <div className="flex items-center gap-2.5">
-              <div className="w-9 h-9 rounded-xl bg-gradient-to-tr from-[#7800D6] to-[#F9CA20] flex items-center justify-center shadow-md">
-                <Trophy className="w-5 h-5 text-white" />
-              </div>
-              <span className="font-heading font-black text-lg text-[var(--text-primary)]">
-                Olympic<span className="text-[#F9CA20]">Hub</span>
-              </span>
-            </div>
+            <img
+              src={logoRetangular}
+              alt="OlympicHub"
+              className="w-auto h-auto max-h-11 max-w-[190px] object-contain"
+            />
             <button
               onClick={() => setMobileMenuOpen(false)}
               className="p-1.5 rounded-lg text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:bg-[var(--bg-elevated)]"
@@ -80,7 +77,11 @@ export const MobileDrawer = () => {
                 key={to}
                 to={to}
                 end={to === '/'}
-                onClick={() => setMobileMenuOpen(false)}
+                onClick={(e) => {
+                  if (handleProtectedNavigation(e, to)) {
+                    setMobileMenuOpen(false);
+                  }
+                }}
                 className={({ isActive }) =>
                   `flex items-center gap-3 px-3.5 py-3 rounded-xl transition-all text-sm font-medium ${
                     isActive

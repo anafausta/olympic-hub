@@ -1,6 +1,6 @@
 import { BentoCard } from '../ui/BentoCard';
 import { Button } from '../ui/Button';
-import { Calendar, ExternalLink, Trophy, Sparkles } from 'lucide-react';
+import { Calendar, ExternalLink, Trophy, Sparkles } from '../ui/SolarIcon';
 
 export const OlympicBanner = () => {
   return (
@@ -12,12 +12,7 @@ export const OlympicBanner = () => {
           </div>
           <div className="space-y-1">
             <div className="flex items-center gap-2 flex-wrap">
-              <span className="text-xs font-bold uppercase tracking-wider text-[#F9CA20] flex items-center gap-1">
-                <Sparkles className="w-3.5 h-3.5" /> Olimpíada Oficial
-              </span>
-              <span className="text-xs px-2 py-0.5 rounded-full bg-[var(--bg-elevated)] text-[var(--text-secondary)] border border-[var(--border-surface)]">
-                OLITEF 2027
-              </span>
+
             </div>
             <h2 className="text-lg md:text-xl font-heading font-black text-[var(--text-primary)]">
               Olimpíada Brasileira de Educação Financeira

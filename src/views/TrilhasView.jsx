@@ -2,7 +2,7 @@ import { PageContainer } from '../components/layout/PageContainer';
 import { TrailFilterBar } from '../components/trilhas/TrailFilterBar';
 import { TrailGrid } from '../components/trilhas/TrailGrid';
 import { TrailOverlay } from '../components/trilhas/TrailOverlay';
-import { Compass } from 'lucide-react';
+import { Compass } from '../components/ui/SolarIcon';
 
 export const TrilhasView = ({
   studentLevel,
@@ -27,7 +27,7 @@ export const TrilhasView = ({
         <div>
           <div className="flex items-center gap-2 text-xs font-bold text-[var(--accent-gold)] uppercase tracking-wider mb-1">
             <Compass className="w-4 h-4" />
-            <span>Trilhas de Aprendizagem Olímpica</span>
+            <span>Trilhas de Aprendizagem</span>
           </div>
           <h1 className="text-2xl md:text-3xl font-heading font-black text-[var(--text-primary)] tracking-tight">
             Trilhas do Nível {studentLevel}

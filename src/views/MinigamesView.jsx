@@ -7,7 +7,7 @@ import { CacaPalavras } from '../components/minigames/CacaPalavras';
 import { Conexo } from '../components/minigames/Conexo';
 import { CrossSums } from '../components/minigames/CrossSums';
 import { GerenteBanco } from '../components/minigames/GerenteBanco';
-import { Gamepad2, Sparkles, Play, Clock } from 'lucide-react';
+import { Gamepad2, Sparkles, Play, Clock } from '../components/ui/SolarIcon';
 
 export const MinigamesView = ({
   gamesList,
@@ -43,19 +43,13 @@ export const MinigamesView = ({
             <div>
               <div className="flex items-center gap-2 text-xs font-bold text-[var(--accent-gold)] uppercase tracking-wider mb-1">
                 <Gamepad2 className="w-4 h-4" />
-                <span>Jogos Educativos de Finanças & Investimentos</span>
+                <span>Jogos</span>
               </div>
               <h1 className="text-2xl md:text-3xl font-heading font-black text-[var(--text-primary)] tracking-tight">
-                Minigames Olímpicos
+                Minigames
               </h1>
-              <p className="text-sm text-[var(--text-secondary)] mt-1">
-                Acesso livre para todos os jogos. Cada vitória concede +5 XP à sua pontuação geral.
-              </p>
             </div>
 
-            <Badge color="gold" size="md" className="self-start md:self-end font-bold">
-              <Sparkles className="w-3.5 h-3.5" /> Recompensa Fixa: +5 XP / jogo
-            </Badge>
           </div>
 
           {/* RF80: Free Access Grid without grouping, without ranking side banner */}
@@ -70,13 +64,7 @@ export const MinigamesView = ({
               >
                 <div className="space-y-3">
                   <div className="flex items-center justify-between">
-                    <div className="text-3xl p-2 rounded-2xl bg-[var(--bg-elevated)] border border-[var(--border-surface)] group-hover:scale-110 transition-transform">
-                      {game.icone}
-                    </div>
 
-                    <Badge color="gold" size="sm">
-                      <Sparkles className="w-3 h-3" /> +{game.recompensaXP} XP
-                    </Badge>
                   </div>
 
                   <div>

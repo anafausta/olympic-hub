@@ -1,7 +1,7 @@
 import { useNavigate } from 'react-router-dom';
 import { BentoCard } from '../ui/BentoCard';
 import { Badge } from '../ui/Badge';
-import { BookOpen, ArrowRight } from 'lucide-react';
+import { BookOpen, ArrowRight } from '../ui/SolarIcon';
 
 export const RelatedArticles = ({ recomendados = [] }) => {
   const navigate = useNavigate();
@@ -16,7 +16,7 @@ export const RelatedArticles = ({ recomendados = [] }) => {
           </h3>
         </div>
         <span className="text-xs text-[var(--text-muted)]">
-          Curadoria Pedagógica Humana (Sem IA)
+          Curadoria Pedagógica Humana
         </span>
       </div>
 

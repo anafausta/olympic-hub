@@ -8,7 +8,7 @@ import { SimuladoResult } from '../components/simulado/SimuladoResult';
 import { SimuladoReview } from '../components/simulado/SimuladoReview';
 import { BentoCard } from '../components/ui/BentoCard';
 import { Button } from '../components/ui/Button';
-import { FileCheck2, ArrowLeft } from 'lucide-react';
+import { FileCheck2, ArrowLeft } from '../components/ui/SolarIcon';
 
 export const SimuladoView = ({
   stage, // 'config' | 'running' | 'result' | 'review'
@@ -44,6 +44,13 @@ export const SimuladoView = ({
             <ArrowLeft className="w-4 h-4" />
             <span>Voltar para a Trilha</span>
           </Button>
+        </div>
+      )}
+
+      {/* Loading state for direct trilha simulado */}
+      {stage === 'loading' && (
+        <div className="flex items-center justify-center min-h-[40vh]">
+          <div className="animate-spin rounded-full h-10 w-10 border-b-2 border-[#7800D6]" />
         </div>
       )}
 

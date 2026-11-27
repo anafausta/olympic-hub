@@ -1,7 +1,7 @@
 import { useNavigate } from 'react-router-dom';
 import { BentoCard } from '../ui/BentoCard';
 import { Badge } from '../ui/Badge';
-import { Star, ArrowRight } from 'lucide-react';
+import { Star, ArrowRight } from '../ui/SolarIcon';
 import { useStudent } from '../../context/StudentContext';
 
 export const ArtigoCard = ({ artigo }) => {

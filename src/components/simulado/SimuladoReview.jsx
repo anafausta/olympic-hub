@@ -2,14 +2,23 @@ import { useState } from 'react';
 import { BentoCard } from '../ui/BentoCard';
 import { Button } from '../ui/Button';
 import { Badge } from '../ui/Badge';
-import { Star, CheckCircle2, XCircle, ArrowLeft, ArrowRight, HelpCircle } from 'lucide-react';
+import { Star, CheckCircle2, XCircle, ArrowLeft, ArrowRight, HelpCircle } from '../ui/SolarIcon';
 import { useStudent } from '../../context/StudentContext';
 
-const CHOICE_LETTERS = ['A', 'B', 'C', 'D'];
+const CHOICE_LETTERS = ['A', 'B', 'C', 'D', 'E'];
 
 export const SimuladoReview = ({ simulado, onBackToResult }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const { student, toggleSavedQuestion } = useStudent();
+
+  const answeredCount =
+    simulado?.questoes?.filter(
+      (q) => q.respostaSelecionada !== null && q.respostaSelecionada !== undefined
+    ).length || 0;
+
+  if (!simulado?.finalizado || simulado?.resultado?.cancelado || answeredCount === 0) {
+    return null;
+  }
 
   const questao = simulado?.questoes?.[currentIndex];
   const total = simulado?.questoes?.length || 0;

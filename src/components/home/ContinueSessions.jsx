@@ -1,7 +1,7 @@
 import { useNavigate } from 'react-router-dom';
 import { BentoCard } from '../ui/BentoCard';
 import { Button } from '../ui/Button';
-import { Gamepad2, BookOpen, GraduationCap, ArrowRight } from 'lucide-react';
+import { Gamepad2, BookOpen, GraduationCap, ArrowRight } from '../ui/SolarIcon';
 
 export const ContinueSessions = ({ lastActivity }) => {
   const navigate = useNavigate();
@@ -43,11 +43,8 @@ export const ContinueSessions = ({ lastActivity }) => {
     <div className="space-y-3">
       <div className="flex items-center justify-between">
         <h3 className="text-lg font-heading font-bold text-[var(--text-primary)]">
-          Continuar de Onde Parou
+          Continue da onde parou
         </h3>
-        <span className="text-xs text-[var(--text-muted)]">
-          Sessões salvas automaticamente
-        </span>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">

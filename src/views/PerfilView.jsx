@@ -7,7 +7,7 @@ import { PasswordResetModal } from '../components/perfil/PasswordResetModal';
 import { DeleteAccountModal } from '../components/perfil/DeleteAccountModal';
 import { BentoCard } from '../components/ui/BentoCard';
 import { Button } from '../components/ui/Button';
-import { User, KeyRound, Trash2, Shield } from 'lucide-react';
+import { User, KeyRound, Trash2, Shield } from '../components/ui/SolarIcon';
 
 export const PerfilView = ({
   student,
@@ -30,14 +30,11 @@ export const PerfilView = ({
       <div>
         <div className="flex items-center gap-2 text-xs font-bold text-[var(--accent-gold)] uppercase tracking-wider mb-1">
           <User className="w-4 h-4" />
-          <span>Configurações Pessoais & Conta</span>
+          <span>Configurações</span>
         </div>
         <h1 className="text-2xl md:text-3xl font-heading font-black text-[var(--text-primary)] tracking-tight">
-          Meu Perfil de Aluno
+          Meu Perfil
         </h1>
-        <p className="text-sm text-[var(--text-secondary)] mt-1">
-          Gerencie seu avatar, e-mail de acesso, preferências visuais e segurança da conta.
-        </p>
       </div>
 
       {/* Main Profile Info (RF129, RF130, RF131) */}

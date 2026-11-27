@@ -1,6 +1,6 @@
 import { Modal } from '../ui/Modal';
 import { Button } from '../ui/Button';
-import { Clock } from 'lucide-react';
+import { Clock } from '../ui/SolarIcon';
 
 export const InactivityModal = ({ isOpen, onContinue }) => {
   return (

@@ -1,13 +1,16 @@
 import { storageService } from './storageService';
 
-const TRILHAS_STORAGE_KEY = 'olympic_hub_trilhas_data';
+const TRILHAS_STORAGE_KEY = 'olympic_hub_trilhas_data_v2';
 
 const INITIAL_TRILHAS = [
   // Trilha Geral Nível 2 (Destaque da Home - RF33, RF34, RF36, RF37)
   {
     id: 'trilha-geral-n2',
     titulo: 'Trilha Geral de Aprendizagem — Nível 2 (8º e 9º Ano)',
-    descricao: 'Formação olímpica completa cobrindo matemática financeira, noções de mercado, investimentos e planejamento estratégico.',
+    descricao:
+      'Formação olímpica completa para a OLITEF: domine juros simples e compostos, análise de risco e retorno, diversificação de carteira, títulos públicos e tomada de decisão financeira consciente.',
+    videoTitulo: 'Vídeo-aula: Juros Compostos e Planejamento Olímpico',
+    videoUrl: 'https://www.youtube.com/watch?v=tZ4XfkWlh-U',
     nivel: 2,
     isGeral: true,
     tags: ['Matemática Financeira', 'Orçamento', 'Investimentos', 'Olimpíada'],
@@ -63,7 +66,10 @@ const INITIAL_TRILHAS = [
   {
     id: 'trilha-802-01',
     titulo: 'Orçamento Inteligente e Consumo Consciente',
-    descricao: 'Aprenda a planejar receitas, conter gastos impulsivos e montar uma reserva financeira pessoal.',
+    descricao:
+      'Aprenda a diferenciar necessidades de desejos, aplicar a regra 50-30-20, comparar compras à vista com parcelamentos e montar sua reserva de emergência sem abrir mão do lazer.',
+    videoTitulo: 'Vídeo-aula: Como Organizar seu Orçamento com a Regra 50-30-20',
+    videoUrl: 'https://www.youtube.com/watch?v=GjLQnuREjlY',
     nivel: 2,
     isGeral: false,
     tags: ['Orçamento', 'Consumo Consciente'],
@@ -102,7 +108,10 @@ const INITIAL_TRILHAS = [
   {
     id: 'trilha-802-02',
     titulo: 'Matemática Olímpica: Juros e Inflação',
-    descricao: 'Aprofunde-se nos cálculos matemáticos mais cobrados nas provas da Olimpíada Brasileira de Educação Financeira.',
+    descricao:
+      'Aprofunde-se nos cálculos de juros compostos, descontos sucessivos, IPCA, IGP-M e ganho real acima da inflação — os tópicos mais cobrados nas provas da Olimpíada.',
+    videoTitulo: 'Vídeo-aula: Inflação, IPCA e Poder de Compra na Prática',
+    videoUrl: 'https://www.youtube.com/watch?v=6v5lvdYILss',
     nivel: 2,
     isGeral: false,
     tags: ['Matemática Financeira', 'Olimpíada'],
@@ -158,7 +167,10 @@ const INITIAL_TRILHAS = [
   {
     id: 'trilha-802-03',
     titulo: 'Mercado Financeiro e Títulos de Renda Fixa',
-    descricao: 'Conheça o Tesouro Direto, CDBs, LCI, LCA e como o governo e os bancos captam recursos.',
+    descricao:
+      'Conheça o funcionamento do Tesouro Direto (Selic, Prefixado e IPCA+), CDBs, debêntures, cobertura do FGC e o papel dos órgãos supervisores do Sistema Financeiro Nacional.',
+    videoTitulo: 'Vídeo-aula: Tesouro Direto (Selic, Prefixado e IPCA+)',
+    videoUrl: 'https://www.youtube.com/watch?v=FFKGBZc6G_A',
     nivel: 2,
     isGeral: false,
     tags: ['Investimentos', 'Mercado Financeiro'],
@@ -195,8 +207,11 @@ const INITIAL_TRILHAS = [
   },
   {
     id: 'trilha-802-04',
-    titulo: 'Criptoativos e Segurança Digital',
-    descricao: 'Entenda blockchain, carteiras digitais e como se proteger de golpes virtuais e pirâmides.',
+    titulo: 'Segurança Digital e Proteção Financeira',
+    descricao:
+      'Aprenda a identificar golpes virtuais, phishing, falsas centrais bancárias e armadilhas de apostas, protegendo suas senhas, chaves Pix e patrimônio.',
+    videoTitulo: 'Vídeo-aula: Como se Proteger de Golpes Financeiros e Phishing',
+    videoUrl: 'https://www.youtube.com/watch?v=rTrphAaH2Vk',
     nivel: 2,
     isGeral: false,
     tags: ['Segurança Digital', 'Mercado Financeiro'],

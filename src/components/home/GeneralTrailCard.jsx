@@ -3,7 +3,7 @@ import { useStudent } from '../../context/StudentContext';
 import { BentoCard } from '../ui/BentoCard';
 import { ProgressBar } from '../ui/ProgressBar';
 import { Badge } from '../ui/Badge';
-import { ArrowRight, CheckCircle2, Sparkles } from 'lucide-react';
+import { ArrowRight, CheckCircle2, Sparkles } from '../ui/SolarIcon';
 
 export const GeneralTrailCard = ({ trilhaGeral }) => {
   const navigate = useNavigate();
@@ -34,11 +34,11 @@ export const GeneralTrailCard = ({ trilhaGeral }) => {
           <div className="flex items-center gap-2 flex-wrap">
             <span className="text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full bg-white/15 text-white backdrop-blur-sm border border-white/20 flex items-center gap-1.5">
               <Sparkles className="w-3.5 h-3.5 text-[#F9CA20]" />
-              Trilha Geral do Nível
+              Trilha Geral
             </span>
             {isPrepared ? (
               <Badge color="emerald" size="sm" className="font-bold">
-                <CheckCircle2 className="w-3.5 h-3.5" /> Preparado para a Prova
+
               </Badge>
             ) : (
               <span className="text-xs text-white/80 font-medium">
@@ -58,7 +58,7 @@ export const GeneralTrailCard = ({ trilhaGeral }) => {
 
           <div className="pt-2">
             <div className="flex justify-between items-center text-xs text-white/80 mb-1.5">
-              <span>Progresso geral na preparação</span>
+              <span>Progresso</span>
               <span className="font-bold text-[#F9CA20] text-sm">{progress}%</span>
             </div>
             <ProgressBar value={progress} color="gold" height="h-3" />

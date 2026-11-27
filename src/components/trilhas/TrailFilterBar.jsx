@@ -1,4 +1,4 @@
-import { Search, X, Filter } from 'lucide-react';
+import { Search, X, Filter } from '../ui/SolarIcon';
 import { Badge } from '../ui/Badge';
 
 export const TrailFilterBar = ({

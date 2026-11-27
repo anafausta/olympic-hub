@@ -9,7 +9,7 @@ import {
   FORUM_BODY_MAX_CHARS,
   sanitizeCharLimit
 } from '../../utils/validators';
-import { Link as LinkIcon, Send } from 'lucide-react';
+import { Link as LinkIcon, Send } from '../ui/SolarIcon';
 
 export const NewTopicFromArticleModal = ({
   artigo,

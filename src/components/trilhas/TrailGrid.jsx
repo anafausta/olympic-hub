@@ -1,5 +1,5 @@
 import { TrailCard } from './TrailCard';
-import { SearchX } from 'lucide-react';
+import { SearchX } from '../ui/SolarIcon';
 
 export const TrailGrid = ({ trilhas = [], onOpenOverlay, isEmpty }) => {
   // RF77: Empty state

@@ -6,7 +6,7 @@ import {
   FORUM_BODY_MAX_CHARS,
   sanitizeCharLimit
 } from '../../utils/validators';
-import { Send } from 'lucide-react';
+import { Send } from '../ui/SolarIcon';
 
 const ASSUNTOS_FORUM = [
   'Geral',

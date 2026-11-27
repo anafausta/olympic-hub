@@ -10,7 +10,7 @@ import {
   UserCheck,
   User,
   X
-} from 'lucide-react';
+} from '../components/ui/SolarIcon';
 
 export const ForumView = ({
   posts,
@@ -40,14 +40,11 @@ export const ForumView = ({
         <div>
           <div className="flex items-center gap-2 text-xs font-bold text-[var(--accent-gold)] uppercase tracking-wider mb-1">
             <MessageSquare className="w-4 h-4" />
-            <span>Fórum Exclusivo da Turma</span>
+            <span>Fórum da Turma</span>
           </div>
           <h1 className="text-2xl md:text-3xl font-heading font-black text-[var(--text-primary)] tracking-tight">
             Dúvidas & Discussões — {salaNome}
           </h1>
-          <p className="text-sm text-[var(--text-secondary)] mt-1">
-            Tire dúvidas sobre exercícios da Olimpíada com seus colegas e professores da sala.
-          </p>
         </div>
 
         {/* Button to Create Post (RF139) */}
@@ -61,7 +58,7 @@ export const ForumView = ({
           className="gap-2 cursor-pointer self-start md:self-auto shadow-md"
         >
           <Plus className="w-4 h-4" />
-          <span>Nova Dúvida / Post</span>
+          <span>Nova Dúvida</span>
         </Button>
       </div>
 
@@ -147,9 +144,6 @@ export const ForumView = ({
           <h4 className="font-heading font-bold text-base text-[var(--text-primary)]">
             Nenhuma dúvida encontrada
           </h4>
-          <p className="text-xs text-[var(--text-secondary)]">
-            Tente alterar os filtros ou publique a primeira pergunta da sala!
-          </p>
         </div>
       ) : (
         <div className="space-y-3">

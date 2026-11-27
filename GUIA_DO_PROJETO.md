@@ -146,8 +146,23 @@ Guia de referência rápida para desenvolvedores sobre a arquitetura, arquivos, 
 - **Estado Local:** Filtros de tela, paginação, estágios de simulado, estado de partidas dos minigames e abertura de modais residem localmente nas respectivas Pages/Components.
 
 ---
+## 6. Organização da Estilização
 
-## 6. Pontos Importantes para Manutenção
+A estilização combina **\*\*Tailwind CSS v4\*\*** com **\*\*CSS Variables (Design Tokens)\*\*** para suportar Dark Mode e Light Mode de forma centralizada:
+
+\| Camada / Arquivo | Papel na Estilização |
+\|---|---|
+\| \`vite.config.js\` | Integra o plugin \`@tailwindcss/vite\` ao pipeline de build. |
+\| \`index.html\` | Carrega as fontes do Google Fonts (\`Plus Jakarta Sans\` e \`Inter\`). |
+\| \`src/index.css\` | Ponto de entrada CSS (\`@import "tailwindcss";\` e \`@import "./styles/tokens.css";\`), reset base, tipografia padrão (\`Inter\` no corpo, \`Plus Jakarta Sans\` em \`h1–h6\` e \`.font-heading\`), scrollbar customizada, foco acessível (\`:focus-visible\`) e suporte a \`prefers-reduced-motion\`. |
+\| \`src/styles/tokens.css\` | Define os tokens semânticos em \`:root\` / \`[data-theme="dark"]\` (base \`#160C33\`, superfície \`#21124A\`) e \`[data-theme="light"]\` (base \`#F4F1FA\`, superfície \`#FFFFFF\`), além da animação \`.animate-shake\` (\`@keyframes shake\`). |
+\| \`src/context/ThemeContext.jsx\` | Alterna \`data-theme\` no \`\<html>\` (\`document.documentElement\`), atualizando toda a paleta via CSS Variables em tempo real. |
+\| \`src/App.css\` | Mantido vazio (apenas comentário), sem estilos globais concorrentes. |
+\| Componentes \`.jsx\` | Utilizam classes utilitárias do Tailwind conectadas aos tokens (ex.: \`bg-[var(--bg-surface)]\`, \`border-[var(--border-surface)]\`, \`text-[var(--text-primary)]\`). Estilos \`style={{ ... }}\` ficam restritos a valores dinâmicos em runtime (\`width\` em \`ProgressBar.jsx\` e \`backgroundColor\` em \`Avatar.jsx\`). |
+
+**---**
+
+## 7. Pontos Importantes para Manutenção
 
 - **Ranking da Sala sem avatares:** `ClassroomRanking` não deve renderizar avatares e deve manter exatamente 5 linhas de Top 5 (com espaços vagos se `< 5`) + linha extra apenas quando `posicao > 5`.
 - **Botão de continuidade de trilha:** Deve permanecer exclusivamente dentro do `TrailOverlay` (nunca nos cards do `TrailGrid`).

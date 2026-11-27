@@ -2,7 +2,7 @@ import { useNavigate } from 'react-router-dom';
 import { BentoCard } from '../ui/BentoCard';
 import { Button } from '../ui/Button';
 import { Badge } from '../ui/Badge';
-import { Users, MessageSquare, GraduationCap } from 'lucide-react';
+import { Users, MessageSquare, GraduationCap } from '../ui/SolarIcon';
 
 export const SalaHeader = ({ sala }) => {
   const navigate = useNavigate();

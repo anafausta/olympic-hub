@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { BentoCard } from '../ui/BentoCard';
 import { Button } from '../ui/Button';
 import { Badge } from '../ui/Badge';
-import { Heart, Sparkles, CheckCircle2, RotateCcw, ArrowLeft } from 'lucide-react';
+import { Heart, Sparkles, CheckCircle2, RotateCcw, ArrowLeft } from '../ui/SolarIcon';
 
 // RF85: Conexo Financeiro com 4 grupos de 4 palavras e sistema de vidas
 const GROUPS = [
@@ -133,7 +133,7 @@ export const Conexo = ({ onWin, onBack }) => {
       <BentoCard variant="surface" className="p-6 md:p-8 space-y-6">
         <div>
           <h3 className="text-xl font-heading font-black text-[var(--text-primary)]">
-            Conexo Financeiro
+            Conexo
           </h3>
           <p className="text-xs text-[var(--text-secondary)] mt-1">
             Selecione 4 palavras que compartilham a mesma conexão conceitual. Cuidado com as vidas!

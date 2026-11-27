@@ -11,15 +11,14 @@ import {
   MessageSquare,
   User,
   ChevronLeft,
-  ChevronRight,
   Sun,
   Moon,
-  LogOut,
-  Trophy
-} from 'lucide-react';
+  LogOut
+} from '../ui/SolarIcon';
+import logoRetangular from '../../assets/logo - retangular.png';
 
 export const Sidebar = () => {
-  const { sidebarCollapsed, toggleSidebar, setLogoutModalOpen } = useNavigation();
+  const { sidebarCollapsed, toggleSidebar, setLogoutModalOpen, handleProtectedNavigation } = useNavigation();
   const { toggleTheme, isDark } = useTheme();
 
   const navLinks = [
@@ -35,37 +34,34 @@ export const Sidebar = () => {
 
   return (
     <aside
-      className={`hidden md:flex flex-col justify-between h-screen fixed left-0 top-0 z-30 bg-[var(--bg-surface)] border-r border-[var(--border-surface)] transition-all duration-300 ease-in-out ${
-        sidebarCollapsed ? 'w-[80px]' : 'w-[240px]'
+      className={`hidden md:flex flex-col justify-between h-screen fixed left-0 top-0 z-30 w-[240px] bg-[var(--bg-surface)] border-r border-[var(--border-surface)] transition-transform duration-300 ease-in-out ${
+        sidebarCollapsed ? '-translate-x-full pointer-events-none' : 'translate-x-0'
       }`}
+      aria-hidden={sidebarCollapsed}
     >
       {/* Top Header / Logo */}
       <div>
         <div className="flex items-center justify-between h-16 px-4 border-b border-[var(--border-surface)]">
-          <NavLink to="/" className="flex items-center gap-3 overflow-hidden">
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-[#7800D6] to-[#F9CA20] flex items-center justify-center flex-shrink-0 shadow-md shadow-[#7800D6]/20">
-              <Trophy className="w-5 h-5 text-white" />
-            </div>
-            {!sidebarCollapsed && (
-              <div className="flex flex-col">
-                <span className="font-heading font-black text-lg tracking-tight text-[var(--text-primary)]">
-                  Olympic<span className="text-[#F9CA20]">Hub</span>
-                </span>
-                <span className="text-[10px] text-[var(--text-muted)] font-medium -mt-1 tracking-wider uppercase">
-                  Educação Olímpica
-                </span>
-              </div>
-            )}
+          <NavLink
+            to="/"
+            onClick={(e) => handleProtectedNavigation(e, '/')}
+            className="flex items-center overflow-hidden"
+          >
+            <img
+              src={logoRetangular}
+              alt="OlympicHub"
+              className="w-auto h-auto max-h-12 max-w-[175px] object-contain"
+            />
           </NavLink>
 
-          {/* Collapse/Expand Toggle Button */}
+          {/* Collapse Toggle Button */}
           <button
             onClick={toggleSidebar}
             className="p-1.5 rounded-lg text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:bg-[var(--bg-elevated)] transition-colors cursor-pointer"
-            title={sidebarCollapsed ? 'Expandir menu' : 'Recolher menu'}
-            aria-label={sidebarCollapsed ? 'Expandir menu' : 'Recolher menu'}
+            title="Recolher menu"
+            aria-label="Recolher menu"
           >
-            {sidebarCollapsed ? <ChevronRight className="w-4 h-4" /> : <ChevronLeft className="w-4 h-4" />}
+            <ChevronLeft className="w-4 h-4" />
           </button>
         </div>
 
@@ -76,6 +72,7 @@ export const Sidebar = () => {
               key={to}
               to={to}
               end={to === '/'}
+              onClick={(e) => handleProtectedNavigation(e, to)}
               className={({ isActive }) =>
                 `flex items-center gap-3 px-3.5 py-3 rounded-xl transition-all select-none group relative ${
                   isActive
@@ -83,15 +80,9 @@ export const Sidebar = () => {
                     : 'text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:bg-[var(--bg-elevated)]'
                 }`
               }
-              title={sidebarCollapsed ? label : undefined}
             >
               <Icon className="w-5 h-5 flex-shrink-0" />
-              {!sidebarCollapsed && <span className="text-sm font-medium">{label}</span>}
-              {sidebarCollapsed && (
-                <div className="absolute left-full ml-3 px-2.5 py-1.5 bg-[var(--bg-elevated)] border border-[var(--border-surface)] text-[var(--text-primary)] text-xs rounded-lg shadow-lg opacity-0 pointer-events-none group-hover:opacity-100 transition-opacity z-50 whitespace-nowrap">
-                  {label}
-                </div>
-              )}
+              <span className="text-sm font-medium">{label}</span>
             </NavLink>
           ))}
         </nav>
@@ -110,11 +101,9 @@ export const Sidebar = () => {
           ) : (
             <Moon className="w-5 h-5 text-[#7800D6] flex-shrink-0" />
           )}
-          {!sidebarCollapsed && (
-            <span className="text-sm font-medium">
-              {isDark ? 'Tema Claro' : 'Tema Escuro'}
-            </span>
-          )}
+          <span className="text-sm font-medium">
+            {isDark ? 'Tema Claro' : 'Tema Escuro'}
+          </span>
         </button>
 
         {/* Logout Button (RF135) */}
@@ -124,7 +113,7 @@ export const Sidebar = () => {
           title="Encerrar sessão"
         >
           <LogOut className="w-5 h-5 flex-shrink-0" />
-          {!sidebarCollapsed && <span className="text-sm font-medium">Sair</span>}
+          <span className="text-sm font-medium">Sair</span>
         </button>
       </div>
     </aside>

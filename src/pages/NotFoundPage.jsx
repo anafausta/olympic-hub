@@ -2,7 +2,7 @@ import { useNavigate } from 'react-router-dom';
 import { PageContainer } from '../components/layout/PageContainer';
 import { BentoCard } from '../components/ui/BentoCard';
 import { Button } from '../components/ui/Button';
-import { Compass, Home } from 'lucide-react';
+import { Compass, Home } from '../components/ui/SolarIcon';
 
 export const NotFoundPage = () => {
   const navigate = useNavigate();
@@ -20,7 +20,7 @@ export const NotFoundPage = () => {
             Página Não Encontrada
           </h2>
           <p className="text-xs text-[var(--text-secondary)] max-w-xs mx-auto leading-relaxed">
-            O endereço acessado não existe na plataforma Olympic Hub ou foi movido para outra seção.
+            O endereço acessado não existe na plataforma ou foi movido para outra seção.
           </p>
         </div>
 

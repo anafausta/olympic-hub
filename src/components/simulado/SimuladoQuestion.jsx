@@ -1,8 +1,8 @@
 import { Badge } from '../ui/Badge';
-import { Star } from 'lucide-react';
+import { Star } from '../ui/SolarIcon';
 import { useStudent } from '../../context/StudentContext';
 
-const CHOICE_LETTERS = ['A', 'B', 'C', 'D'];
+const CHOICE_LETTERS = ['A', 'B', 'C', 'D', 'E'];
 
 export const SimuladoQuestion = ({
   questao,

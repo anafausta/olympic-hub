@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { BentoCard } from '../ui/BentoCard';
 import { Button } from '../ui/Button';
 import { Badge } from '../ui/Badge';
-import { Clock, HelpCircle, CheckCircle2, RotateCcw, ArrowLeft, Sparkles, XCircle } from 'lucide-react';
+import { Clock, HelpCircle, CheckCircle2, RotateCcw, ArrowLeft, Sparkles, XCircle } from '../ui/SolarIcon';
 import { formatSecondsToMinutes } from '../../utils/formatters';
 
 // RF83: Palavras Cruzadas com pistas em formato de perguntas/definições e dicas, limite de tempo (sem vidas)
@@ -115,7 +115,7 @@ export const PalavrasCruzadas = ({ onWin, onBack }) => {
       <BentoCard variant="surface" className="p-6 md:p-8 space-y-6">
         <div>
           <h3 className="text-xl font-heading font-black text-[var(--text-primary)]">
-            Palavras Cruzadas de Investimentos
+            Palavras Cruzadas
           </h3>
           <p className="text-xs text-[var(--text-secondary)] mt-1">
             Preencha todos os termos conceituais a partir das definições e dicas antes do tempo acabar.

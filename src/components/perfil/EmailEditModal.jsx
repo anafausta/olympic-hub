@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Modal } from '../ui/Modal';
 import { Button } from '../ui/Button';
 import { isValidEmail } from '../../utils/validators';
-import { Mail, AlertCircle } from 'lucide-react';
+import { Mail, AlertCircle } from '../ui/SolarIcon';
 
 export const EmailEditModal = ({
   isOpen,

@@ -1,6 +1,6 @@
 import { Modal } from '../ui/Modal';
 import { Button } from '../ui/Button';
-import { AlertCircle, HelpCircle } from 'lucide-react';
+import { AlertCircle, HelpCircle } from '../ui/SolarIcon';
 
 export const SimuladoConfirmModal = ({
   isOpen,

@@ -1,4 +1,4 @@
-import { ChevronLeft, ChevronRight, Check } from 'lucide-react';
+import { ChevronLeft, ChevronRight, Check } from '../ui/SolarIcon';
 import { Button } from '../ui/Button';
 
 export const SimuladoNav = ({

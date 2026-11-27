@@ -3,7 +3,7 @@ import { ArtigoCard } from '../components/artigos/ArtigoCard';
 import { ArtigoSearch } from '../components/artigos/ArtigoSearch';
 import { ArtigoFilters } from '../components/artigos/ArtigoFilters';
 import { ArtigoPagination } from '../components/artigos/ArtigoPagination';
-import { BookOpen, SearchX } from 'lucide-react';
+import { BookOpen, SearchX } from '../components/ui/SolarIcon';
 
 export const ArtigosView = ({
   searchInput,
@@ -29,13 +29,13 @@ export const ArtigosView = ({
         <div>
           <div className="flex items-center gap-2 text-xs font-bold text-[var(--accent-gold)] uppercase tracking-wider mb-1">
             <BookOpen className="w-4 h-4" />
-            <span>Biblioteca & Base de Conhecimento (Wiki)</span>
+            <span>Biblioteca & Base de Conhecimento</span>
           </div>
           <h1 className="text-2xl md:text-3xl font-heading font-black text-[var(--text-primary)] tracking-tight">
             Artigos e Guias de Estudo
           </h1>
           <p className="text-sm text-[var(--text-secondary)] mt-1">
-            Listagem oficial em ordem alfabética (A-Z) para aprofundamento nos temas da Olimpíada.
+            Listagem oficial em ordem alfabética
           </p>
         </div>
       </div>

@@ -1,4 +1,4 @@
-import { Clock, AlertTriangle } from 'lucide-react';
+import { Clock, AlertTriangle } from '../ui/SolarIcon';
 import { formatSecondsToMinutes } from '../../utils/formatters';
 
 export const SimuladoTimer = ({ remainingSeconds, isWarning, comTempo }) => {
@@ -6,7 +6,7 @@ export const SimuladoTimer = ({ remainingSeconds, isWarning, comTempo }) => {
     return (
       <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-[var(--bg-elevated)] border border-[var(--border-surface)] text-xs text-[var(--text-secondary)]">
         <Clock className="w-3.5 h-3.5 text-[var(--text-muted)]" />
-        <span>Modo sem limite de tempo</span>
+        <span>Sem cronômetro</span>
       </div>
     );
   }

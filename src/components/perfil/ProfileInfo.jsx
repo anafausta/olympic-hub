@@ -9,7 +9,7 @@ import {
   Edit2,
   Sparkles,
   Trophy
-} from 'lucide-react';
+} from '../ui/SolarIcon';
 import { formatXP } from '../../utils/formatters';
 
 export const ProfileInfo = ({
@@ -71,11 +71,11 @@ export const ProfileInfo = ({
       <div className="space-y-4">
         <div className="flex items-center justify-between">
           <h4 className="font-heading font-bold text-sm text-[var(--text-primary)]">
-            Informações Escolares & Cadastro
+            Informações Cadastrais
           </h4>
           <span className="text-xs text-[var(--text-muted)] flex items-center gap-1">
             <Lock className="w-3 h-3 text-[#FF4949]" />
-            Dados escolares bloqueados para edição
+            Bloqueados para edição
           </span>
         </div>
 
@@ -113,7 +113,7 @@ export const ProfileInfo = ({
           {/* Escola (Bloqueado) */}
           <div className="p-3.5 rounded-xl bg-[var(--bg-elevated)] border border-[var(--border-surface)] space-y-1">
             <span className="text-[var(--text-muted)] font-semibold flex items-center justify-between">
-              <span>Instituição / Escola</span>
+              <span>Instituição</span>
               <Lock className="w-3 h-3 text-gray-500" />
             </span>
             <p className="font-bold text-sm text-[var(--text-primary)]">{student?.escola}</p>
@@ -133,7 +133,7 @@ export const ProfileInfo = ({
           {/* Professores Responsáveis */}
           <div className="p-3.5 rounded-xl bg-[var(--bg-elevated)] border border-[var(--border-surface)] space-y-1">
             <span className="text-[var(--text-muted)] font-semibold flex items-center justify-between">
-              <span>Professores Responsáveis</span>
+              <span>Professor</span>
               <GraduationCap className="w-3.5 h-3.5 text-[#F9CA20]" />
             </span>
             <p className="font-bold text-sm text-[var(--text-primary)]">

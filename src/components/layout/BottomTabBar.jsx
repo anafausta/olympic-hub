@@ -1,9 +1,9 @@
 import { NavLink } from 'react-router-dom';
-import { Home, Users, Compass, FileCheck2, MoreHorizontal } from 'lucide-react';
+import { Home, Users, Compass, FileCheck2, MoreHorizontal } from '../ui/SolarIcon';
 import { useNavigation } from '../../context/NavigationContext';
 
 export const BottomTabBar = () => {
-  const { setMobileMenuOpen } = useNavigation();
+  const { setMobileMenuOpen, handleProtectedNavigation } = useNavigation();
 
   const mainTabs = [
     { to: '/', label: 'Home', icon: Home },
@@ -22,6 +22,7 @@ export const BottomTabBar = () => {
           key={to}
           to={to}
           end={to === '/'}
+          onClick={(e) => handleProtectedNavigation(e, to)}
           className={({ isActive }) =>
             `flex flex-col items-center justify-center py-1 px-3 rounded-xl transition-all select-none ${
               isActive

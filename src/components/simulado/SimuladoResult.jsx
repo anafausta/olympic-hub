@@ -10,7 +10,7 @@ import {
   CheckCircle2,
   RotateCcw,
   BookOpenCheck
-} from 'lucide-react';
+} from '../ui/SolarIcon';
 
 export const SimuladoResult = ({
   resultado,
@@ -36,6 +36,9 @@ export const SimuladoResult = ({
   if (!resultado) return null;
 
   const isGreatScore = resultado.taxaAcertoPercent >= 70;
+  const canReview =
+    !resultado.cancelado &&
+    (resultado.totalRespondidas === undefined || resultado.totalRespondidas > 0);
 
   return (
     <BentoCard variant="surface" className="max-w-2xl mx-auto space-y-6 text-center">
@@ -47,11 +50,8 @@ export const SimuladoResult = ({
 
         <div className="space-y-1">
           <h2 className="text-2xl md:text-3xl font-heading font-black text-[var(--text-primary)]">
-            {isGreatScore ? 'Excelente Desempenho! 🎉' : 'Simulado Concluído! 📚'}
+            {isGreatScore ? 'Excelente Desempenho!' : 'Simulado Concluído!'}
           </h2>
-          <p className="text-xs md:text-sm text-[var(--text-secondary)]">
-            Seus pontos foram creditados diretamente na sua pontuação geral.
-          </p>
         </div>
       </div>
 
@@ -66,9 +66,6 @@ export const SimuladoResult = ({
           <div className="text-3xl font-heading font-black text-[var(--accent-gold)]">
             +{formatXP(resultado.xpGanho)}
           </div>
-          <span className="text-[11px] text-[var(--text-muted)]">
-            +10 XP por cada questão acertada
-          </span>
         </div>
 
         {/* Forma 2: Proporção de Acertos */}
@@ -103,16 +100,22 @@ export const SimuladoResult = ({
 
       {/* Actions */}
       <div className="flex flex-col sm:flex-row items-center justify-center gap-3 pt-4 border-t border-[var(--border-surface)]">
-        <Button
-          variant="secondary"
-          size="md"
-          fullWidth
-          onClick={onReview}
-          className="gap-2 cursor-pointer"
-        >
-          <BookOpenCheck className="w-4 h-4 text-[var(--brand-primary)]" />
-          <span>Revisar Gabarito e Explicações</span>
-        </Button>
+        {canReview ? (
+          <Button
+            variant="secondary"
+            size="md"
+            fullWidth
+            onClick={onReview}
+            className="gap-2 cursor-pointer"
+          >
+            <BookOpenCheck className="w-4 h-4 text-[var(--brand-primary)]" />
+            <span>Revisar Gabarito e Explicações</span>
+          </Button>
+        ) : (
+          <p className="text-xs text-[var(--text-muted)] w-full text-center">
+            Simulado não respondido ou cancelado — revisão do gabarito indisponível.
+          </p>
+        )}
 
         {fromTrilha ? (
           <Button

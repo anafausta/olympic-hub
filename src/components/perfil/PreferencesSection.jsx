@@ -1,6 +1,6 @@
 import { BentoCard } from '../ui/BentoCard';
 import { useTheme } from '../../context/ThemeContext';
-import { Sun, Moon, Bell, Sliders } from 'lucide-react';
+import { Sun, Moon, Bell, Sliders } from '../ui/SolarIcon';
 
 export const PreferencesSection = ({
   emailNotifications,
@@ -26,7 +26,7 @@ export const PreferencesSection = ({
               Aparência da Plataforma
             </span>
             <p className="text-xs text-[var(--text-secondary)]">
-              Alterne entre Tema Escuro (padrão) e Tema Claro para conforto visual.
+              Alterne entre Tema Escuro (padrão) e Tema Claro.
             </p>
           </div>
 

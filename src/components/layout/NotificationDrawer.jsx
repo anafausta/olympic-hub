@@ -13,7 +13,7 @@ import {
   FileCheck2,
   BookOpen,
   Calendar
-} from 'lucide-react';
+} from '../ui/SolarIcon';
 
 export const NotificationDrawer = () => {
   const {

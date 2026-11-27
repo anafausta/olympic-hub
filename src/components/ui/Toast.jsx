@@ -1,5 +1,5 @@
 import { useNotification } from '../../context/NotificationContext';
-import { AlertCircle, CheckCircle2, Info, Bell } from 'lucide-react';
+import { AlertCircle, CheckCircle2, Info, Bell } from './SolarIcon';
 
 export const Toast = () => {
   const { toast } = useNotification();

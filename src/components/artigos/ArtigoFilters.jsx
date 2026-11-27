@@ -1,4 +1,4 @@
-import { Filter, X } from 'lucide-react';
+import { Filter, X } from '../ui/SolarIcon';
 import { Badge } from '../ui/Badge';
 
 export const ArtigoFilters = ({

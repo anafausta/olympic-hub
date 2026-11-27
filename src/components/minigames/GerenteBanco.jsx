@@ -12,7 +12,7 @@ import {
   RotateCcw,
   ArrowLeft,
   Sparkles
-} from 'lucide-react';
+} from '../ui/SolarIcon';
 
 // RF158: Clientes com idade, renda e objetivo, escolhas binárias
 const CLIENTS = [

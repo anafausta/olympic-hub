@@ -4,7 +4,7 @@ import { Button } from '../ui/Button';
 import { Badge } from '../ui/Badge';
 import { NewTopicFromArticleModal } from './NewTopicFromArticleModal';
 import { forumService } from '../../services/forumService';
-import { MessageSquare, Plus, ArrowRight, UserCheck } from 'lucide-react';
+import { MessageSquare, Plus, ArrowRight, UserCheck } from '../ui/SolarIcon';
 import { formatRelativeTime } from '../../utils/formatters';
 
 export const ForumTopicsSection = ({ artigo }) => {
